@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
-import { useAuth, useUser } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
+// import { useAuth } from "@clerk/nextjs";
 
 export const Counter = () => {
 
     // const {isLoaded, userId, sessionId, getToken} = useAuth();
-    const {isLoaded, isSignedIn, user} = useUser();
+    const {isLoaded, isSignedIn} = useUser();
     console.log("Counter component");
     const [count, setCount] = useState(0);
     if (!isLoaded) return null;
